@@ -1,0 +1,512 @@
+:root{
+  --text-color: #1a1c20;
+  --link-color: #4a76ee;
+  --background-color: #eeeff1;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+a{
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* Navbar for all pages */
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: solid;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  height: 55px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+nav a{
+  padding: 0 35px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover{
+  border-bottom: 2px solid black;
+  transition: border-bottom 0.4s ease-in;
+}
+
+nav .header-content a span{
+  margin-left: 5px;
+}
+
+/* Footer for all pages */
+.footer{
+  background-color: black;
+  color: white;
+  padding: 32px;
+}
+
+.list-items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 16px 0 16px;
+}
+
+.link{
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu{
+  padding: 0 80px;
+}
+
+.menu .menu-list{
+  display: flex;
+}
+
+/* Home page (Liya's Portfolio) */
+/* Hero */
+.hero-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin: 50px 0;
+  margin-bottom: 100px;
+  gap: 40px;
+} 
+
+.hero-section .text{
+  flex: 5;
+}
+
+.hero-section .text h2{
+  font-size: 45px;
+}
+
+.hero-section .profile{
+  flex: 2;
+  display: flex;
+  justify-content: left;
+}
+
+.hero-section .profile img{
+  width: 350px;           /* MAKE IT A CIRCLE*/
+  border-radius: 50%;
+}
+
+/* Recent Updates */
+.recent-updates{
+  padding: 50px;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recent-updates h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.update-card{
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.update-card img{
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.update-card iframe{
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.update-card a{
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Bullet Point List */
+.bulleted-list{
+  padding: 50px;
+  margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bulleted-list h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.bulleted-list ul{
+  padding-left: 40px;
+}
+
+.bulleted-list li{
+  margin-bottom: 10px;
+  font-size: 18px;
+  list-style: disc;
+}
+
+.bulleted-list a{
+  color: var(--text-color);
+}
+
+/* About Page (About) */
+
+/* Page Navigation */
+.page-navigation{
+  position: fixed;
+  top: 120px;
+  right: 30px;
+}
+
+/* About Me */
+.about-me{
+  padding: 50px 50px;
+  margin-bottom: 75px;
+}
+
+.about-me h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.about-me p{
+  padding-left: 20px;
+}
+
+/* Skills-Goals */
+.column{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.skills-goals{
+  padding: 50px 50px;
+  margin-bottom: 75px;
+}
+
+.skills-goals h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.skills-goals ul,
+.skills-goals ol{
+  padding-left: 40px;
+  margin-left: 20px;
+}
+
+.skills-goals li{
+  margin-bottom: 12px;
+  font-size: 16px;
+  list-style: disc;
+  display: list-item;
+}
+
+.skills-goals ol li{
+  list-style: decimal;
+}
+
+/* HTML Table */
+.interests{
+  padding: 50px 50px;
+  margin-bottom: 75px;
+}
+
+.interests h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead{
+  background-color: white;
+}
+
+th{
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+  border-left: black;
+}
+
+th, td{
+  padding: 15px;
+  border: 1px solid;
+}
+
+table td img{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+table td a{
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--link-color);
+  align-items: right;
+}
+
+.instagram-link{
+  cursor: pointer;
+}
+
+/* Quote */
+.quote{
+  padding: 50px 50px;
+  margin-bottom: 75px;
+}
+
+blockquote{
+  background-color: white;
+  border-left: 5px solid darkgreen;
+  padding: 30px 40px;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+blockquote p{
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+blockquote cite{
+  font-size: 18px;
+  color: black;
+  display: block;
+  text-align: right;
+}
+
+/* Projects Page (About) */
+.projects{
+  padding: 50px 50px;
+  margin-bottom: 75px;
+}
+
+.projects h2{
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 32px;
+}
+
+.project-card{
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  border: 2px solid black;
+  border-radius: 3rem;
+  transition: 0.3s ease-in-out;
+}
+
+.project-card img{
+  width: 400px;
+  border-radius: 16px;
+}
+
+.project-card h3{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.btn-group{
+  display: flex;
+  gap: 1rem;
+}
+
+.btn{
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid black;
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: 0.2 ease-in-out;
+}
+
+.btn a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Contact */
+.contact-section{
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.contact-section h2{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.contact-section .group{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.contact-section .group .text{
+  flex: 3;
+  margin-top: 20px;
+}
+
+.contact-buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.contact-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  width: 100%
+}
+
+.contact-btn i{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.github-btn{
+  background-color: #333;
+  color: white;
+  border: 2px solid #333;
+}
+
+.linkedin-btn{
+  background-color: #0077b5;
+  color: white;
+  border: 2px solid #0077b5;
+}
+
+.email-btn{
+  background-color: var(--link-color);
+  color: white;
+  border: 2px solid var(--link-color);
+}
+
+@media (max-width: 850px){
+  /* Hero-Section */
+  .hero-section .text h2{
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 740px){
+  .hero-section{
+    flex-direction: column;
+  }
+
+  .hero-section .profile img{
+    width: 300px;
+  }
+}
+
+@media (max-width: 600px){
+  /* Navbar */
+  nav{
+    padding: 0 20px;
+  }
+  /* MAKE IT RESPONSIVE */  
+
+  /* Hero-Section */
+  .hero-section{
+    padding: 0 20px;
+  }
+
+  .hero-section .text h2{
+    font-size: 30px;
+  }
+}
