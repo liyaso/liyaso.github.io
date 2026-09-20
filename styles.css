@@ -168,69 +168,70 @@ header{
   font-size: 18px;
 }
 
-/* Section 3: Coursework */
-.coursework-section{
-  padding: 0 50px;
-  margin-bottom: 100px;
+/* Section 3: Projects */
+.projects{
+  padding: 50px 50px;
+  margin-bottom: 75px;
 }
 
-.coursework-section h2{
-  text-align: center;
+.projects h2{
   font-size: 35px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  text-align: center;
   color: rgb(104, 7, 7);
 }
 
-.coursework-info{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-}
+.subtitle{
+  text-align: center;
+  margin-bottom: 15px;
+} 
 
-.grid{
+.projects-grid{
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   gap: 32px;
 }
 
-.grid-card{
-  border: 2px solid rgb(0, 157, 255);
-  border-radius: 48px;
-  padding: 48px;
+.project-card{
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: left;
-  transition: 0.2s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  border: 2px solid rgb(0, 157, 255);
+  border-radius: 3rem;
+  transition: 0.3s ease-in-out;
 }
 
-.grid-card:hover{
-  transform: scale(1.02);
+.project-card img{
+  width: 400px;
+  border-radius: 16px;
 }
 
-.grid-card span{
-  font-size: 24px;
+.project-card h3{
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 5px;
-  color: rgb(104, 7, 7);
 }
 
-.grid-card ul li {
-  position: relative;
-  padding-left: 15px;
+.btn-group{
+  display: flex;
+  gap: 1rem;
+}
+
+.btn{
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid rgb(0, 157, 255);
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: 0.2 ease-in-out;
+}
+
+.btn a{
+  text-decoration: none;
   color: var(--text-color);
-}
-
-.grid-card ul li a{
-  color: white;
-}
-
-.grid-card ul li::before {
-  content: "•";
-  color: white;
-  position: absolute;
-  left: 0;
 }
 
 /* Section 4: Hobbies */
@@ -284,10 +285,7 @@ header{
 /* Section 5: Contact */
 .contact-section{
   margin-bottom: 100px;
-}
-
-.contact-section p{
-  margin-left: 85px;
+  padding: 0 50px;
 }
 
 .contact-section h2{
@@ -300,22 +298,21 @@ header{
 .contact-section .group{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
 }
 
 .contact-section .group .text{
-  flex: 3;
-  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
 }
 
 .contact-buttons{
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
-  margin-top: 24px;
-  margin-left: 150px;
-  width: 50%;
+  margin-top: 24px auto 0;
+  width: 100%;
 }
 
 .contact-btn{
@@ -323,6 +320,7 @@ header{
   align-items: center;
   justify-content: center;
   gap: 20px;
+  margin-top: 15px;
   padding: 16px 32px;
   border-radius: 8px;
   font-size: 16px;
@@ -358,49 +356,6 @@ header{
 .linkedin-btn:hover{
   background-color: transparent;
   transform: scale(1.05);
-}
-
-.email-btn{
-  background-color: var(--link-color);
-  color: white;
-}
-
-.email-btn:hover{
-  background-color: transparent;
-  transform: scale(1.05);
-  border: 2px solid var(--link-color);
-}
-
-.contact-section .group form{
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-section .group form input, 
-.contact-section .group form textarea{
-  font-family: 'Poppins', sans-serif;
-  border: 2px solid var(--link-color);
-  background-color: transparent;
-  padding: 10px;
-  margin-bottom: 15px;
-  outline: none;
-  resize: none;
-} 
-
-.contact-section .group form button{
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: var(--link-color);
-  border: none;
-  height: 50px;
-  cursor: pointer;
-  transition: .1s;
-}
-
-.contact-section .group form button:hover{
-  filter: brightness(.9);
 }
 
 /* Footer */
