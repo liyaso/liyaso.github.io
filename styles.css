@@ -1,23 +1,27 @@
 :root{
-  --text-color: #1a1c20;
-  --link-color: #4a76ee;
-  --background-color: #eeeff1;
+  --text-color:white;
+  --link-color: rgb(0, 157, 255);
+  --background-color: black;
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
   list-style: none;
+  color: var(--text-color);
 }
 
 html{
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body{
-  font-family: "Poppins", sans-serif;
-  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
   max-width: 1400px;
   margin: 0 auto;
@@ -28,90 +32,103 @@ a{
   text-decoration: none;
 }
 
-/* Navbar for all pages */
+/* Header */
 header{
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  border-bottom: solid;
-  padding: 8px 16px;
-  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 20px 24px;
+  border-radius: 48px;
+  z-index: 1000;
+  border: 2px solid rgb(104, 7, 7);
 }
 
-nav{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-  height: 55px;
-  font-size: 22px;
+.logo{
+  font-size: 20px;
   font-weight: 600;
-  color: var(--text-color);
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
 }
 
-nav a{
-  padding: 0 35px;
-  text-decoration: none;
-  color: black;
-  border-bottom: 2px solid transparent;
+.logo:hover{
+  transform: scale(1.1);
 }
 
-nav a:hover{
-  border-bottom: 2px solid black;
-  transition: border-bottom 0.4s ease-in;
-}
-
-nav .header-content a span{
-  margin-left: 5px;
-}
-
-/* Footer for all pages */
-.footer{
-  background-color: black;
-  color: white;
-  padding: 32px;
-}
-
-.list-items{
+.nav-links{
   display: flex;
+  gap: 32px;
   align-items: center;
-  justify-content: center;
-  margin: 16px 16px 0 16px;
 }
 
-.link{
-  font-size: 24px;
+.nav-links li a{
+  position: relative;
+  font-weight: 300;
+}
+
+.nav-links li a::before{
+  position: absolute;
+  content: '';
+  width: 0;
+  left: 0;
+  height: 5px;
+  top: 25px;
+  border-radius: 16px;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(to right, rgb(0, 157, 255), rgb(104, 7, 7));
+}
+
+.nav-links li a.visit-btn::before{
+  background: none;
+}
+
+.nav-links li a:hover::before{
+  width: 100%;
+}
+
+.visit-btn{
+  padding: 13px 24px;
+  border-radius: 48px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  text-wrap: nowrap;
   color: white;
-  text-decoration: none;
+  background: linear-gradient(to right, rgb(0, 157, 255), rgb(104, 7, 7));
+}
+
+.visit-btn:hover{
+  background: linear-gradient(to right, rgb(104, 7, 7), rgb(0, 157, 255));
+  transform: scale(1.03);
+}
+
+#menu-toggle{
+  display: none;
+}
+
+.menu-icon{
+  font-size: 32px;
+  display: none;
   cursor: pointer;
 }
 
-.contact-links{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu{
-  padding: 0 80px;
-}
-
-.menu .menu-list{
-  display: flex;
-}
-
-/* Home page (Liya's Portfolio) */
-/* Hero */
+/* Section 1: Hero */
 .hero-section{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
-  margin: 50px 0;
-  margin-bottom: 100px;
+  margin: 100px 0;
+  margin-bottom: 150px;
   gap: 40px;
-} 
+}
 
 .hero-section .text{
   flex: 5;
@@ -119,305 +136,165 @@ nav .header-content a span{
 
 .hero-section .text h2{
   font-size: 45px;
+  color: rgb(104, 7, 7);
 }
 
-.hero-section .profile{
+.hero-section .headshot{
   flex: 2;
   display: flex;
-  justify-content: left;
+  justify-content: right;
 }
 
-.hero-section .profile img{
-  width: 350px;           /* MAKE IT A CIRCLE*/
-  border-radius: 50%;
+.hero-section .headshot img{
+  width: 350px;
+  border-radius: 15%;
 }
 
-/* Recent Updates */
-.recent-updates{
-  padding: 50px;
+/* Section 2: About Me */
+.about-section{
+  padding: 0 100px;
+  margin-bottom: 150px;
+}
+
+.about-section h2{
+  text-align: center;
+  font-size: 35px;
   margin-bottom: 50px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  color: rgb(104, 7, 7);
 }
 
-.recent-updates h2{
-  font-size: 35px;
-  margin-bottom: 30px;
+.about-section .text{
+  flex: 8;
+  font-size: 18px;
+}
+
+/* Section 3: Coursework */
+.coursework-section{
+  padding: 0 50px;
+  margin-bottom: 100px;
+}
+
+.coursework-section h2{
   text-align: center;
-}
-
-.update-card{
-  background-color: white;
-  border-radius: 8px;
+  font-size: 35px;
   margin-bottom: 50px;
-  overflow: hidden;
+  color: rgb(104, 7, 7);
 }
 
-.update-card img{
-  width: 100%;
-  object-fit: cover;
-  display: block;
+.coursework-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
 }
 
-.update-card iframe{
-  width: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.update-card a{
-  text-decoration: none;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-/* Bullet Point List */
-.bulleted-list{
-  padding: 50px;
-  margin-bottom: 50px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bulleted-list h2{
-  font-size: 35px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.bulleted-list ul{
-  padding-left: 40px;
-}
-
-.bulleted-list li{
-  margin-bottom: 10px;
-  font-size: 18px;
-  list-style: disc;
-}
-
-.bulleted-list a{
-  color: var(--text-color);
-}
-
-/* About Page (About) */
-
-/* Page Navigation */
-.page-navigation{
-  position: fixed;
-  top: 120px;
-  right: 30px;
-}
-
-/* About Me */
-.about-me{
-  padding: 50px 50px;
-  margin-bottom: 75px;
-}
-
-.about-me h2{
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-.about-me p{
-  padding-left: 20px;
-}
-
-/* Skills-Goals */
-.column{
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
-
-.row::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.skills-goals{
-  padding: 50px 50px;
-  margin-bottom: 75px;
-}
-
-.skills-goals h2{
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-
-.skills-goals ul,
-.skills-goals ol{
-  padding-left: 40px;
-  margin-left: 20px;
-}
-
-.skills-goals li{
-  margin-bottom: 12px;
-  font-size: 16px;
-  list-style: disc;
-  display: list-item;
-}
-
-.skills-goals ol li{
-  list-style: decimal;
-}
-
-/* HTML Table */
-.interests{
-  padding: 50px 50px;
-  margin-bottom: 75px;
-}
-
-.interests h2{
-  font-size: 35px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-table{
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-thead{
-  background-color: white;
-}
-
-th{
-  text-align: left;
-  font-weight: 600;
-  font-size: 18px;
-  border-left: black;
-}
-
-th, td{
-  padding: 15px;
-  border: 1px solid;
-}
-
-table td img{
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-table td a{
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--link-color);
-  align-items: right;
-}
-
-.instagram-link{
-  cursor: pointer;
-}
-
-/* Quote */
-.quote{
-  padding: 50px 50px;
-  margin-bottom: 75px;
-}
-
-blockquote{
-  background-color: white;
-  border-left: 5px solid darkgreen;
-  padding: 30px 40px;
-  margin: 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-blockquote p{
-  font-size: 24px;
-  color: var(--text-color);
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-blockquote cite{
-  font-size: 18px;
-  color: black;
-  display: block;
-  text-align: right;
-}
-
-/* Projects Page (About) */
-.projects{
-  padding: 50px 50px;
-  margin-bottom: 75px;
-}
-
-.projects h2{
-  font-size: 35px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.projects-grid{
+.grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(2,1fr);
   gap: 32px;
 }
 
-.project-card{
-  padding: 3rem 2rem;
+.grid-card{
+  border: 2px solid rgb(0, 157, 255);
+  border-radius: 48px;
+  padding: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1.5rem;
-  border: 2px solid black;
-  border-radius: 3rem;
-  transition: 0.3s ease-in-out;
+  align-items: baseline;
+  justify-content: left;
+  transition: 0.2s ease-in-out;
 }
 
-.project-card img{
-  width: 400px;
-  border-radius: 16px;
+.grid-card:hover{
+  transform: scale(1.02);
 }
 
-.project-card h3{
-  font-size: 2rem;
+.grid-card span{
+  font-size: 24px;
   font-weight: 600;
+  margin-bottom: 5px;
+  color: rgb(104, 7, 7);
 }
 
-.btn-group{
-  display: flex;
-  gap: 1rem;
-}
-
-.btn{
-  border-radius: 3rem;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid black;
-  cursor: pointer;
-  text-wrap: nowrap;
-  transition: 0.2 ease-in-out;
-}
-
-.btn a{
-  text-decoration: none;
+.grid-card ul li {
+  position: relative;
+  padding-left: 15px;
   color: var(--text-color);
 }
 
-/* Contact */
-.contact-section{
+.grid-card ul li a{
+  color: white;
+}
+
+.grid-card ul li::before {
+  content: "•";
+  color: white;
+  position: absolute;
+  left: 0;
+}
+
+/* Section 4: Hobbies */
+.interests-section{
   padding: 0 50px;
+  margin-bottom: 150px;
+}
+
+.interests-section h2{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 50px;
+  color: rgb(104, 7, 7);
+}
+
+.interests-section .cells{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.interests-section .cells .cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 200px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 1px solid rgb(0, 157, 255);
+  border-radius: 5px;
+}
+
+.interests-section .cells .cell img{
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.interests-section .cells .cell i{
+  color: white;
+}
+
+.interests-section .cells .cell span{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Section 5: Contact */
+.contact-section{
   margin-bottom: 100px;
+}
+
+.contact-section p{
+  margin-left: 85px;
 }
 
 .contact-section h2{
   text-align: center;
   font-size: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  color: rgb(104, 7, 7);
 }
 
 .contact-section .group{
@@ -436,27 +313,29 @@ blockquote cite{
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 1.5rem;
-  width: 100%;
+  margin-top: 24px;
+  margin-left: 150px;
+  width: 50%;
 }
 
 .contact-btn{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  gap: 20px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: 500;
   transition: 0.3s ease-in-out;
   text-decoration: none;
-  width: 100%
+  width: 100%;
 }
 
 .contact-btn i{
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 500;
+  color: white;
 }
 
 .github-btn{
@@ -465,48 +344,224 @@ blockquote cite{
   border: 2px solid #333;
 }
 
+.github-btn:hover{
+  background-color: transparent;
+  transform: scale(1.05);
+}
+
 .linkedin-btn{
   background-color: #0077b5;
   color: white;
   border: 2px solid #0077b5;
 }
 
+.linkedin-btn:hover{
+  background-color: transparent;
+  transform: scale(1.05);
+}
+
 .email-btn{
   background-color: var(--link-color);
   color: white;
+}
+
+.email-btn:hover{
+  background-color: transparent;
+  transform: scale(1.05);
   border: 2px solid var(--link-color);
 }
 
+.contact-section .group form{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section .group form input, 
+.contact-section .group form textarea{
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid var(--link-color);
+  background-color: transparent;
+  padding: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  resize: none;
+} 
+
+.contact-section .group form button{
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: var(--link-color);
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.contact-section .group form button:hover{
+  filter: brightness(.9);
+}
+
+/* Footer */
+.row{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+}
+
+.row hr{
+  opacity: 0.7;
+}
+
+.row .contact-icons{
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 15px;
+  transition: 0.5s;
+}
+
 @media (max-width: 850px){
-  /* Hero-Section */
+  /* Section 1: Hero */
   .hero-section .text h2{
     font-size: 35px;
+  }
+
+  form {
+    margin: 80px;
   }
 }
 
 @media (max-width: 740px){
+  /* Header */
+  header{
+    gap: 16px;
+    padding: 16px 16px;
+  }
+
+  header .logo{
+    font-size: 16px;
+  }
+
+  /* Section 1: Hero */
   .hero-section{
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .headshot img{
+    width: 300px;
+  }
+
+  /* Section 3: Coursework */
+  .grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  /* Section 4: Contact */
+  .contact-section .group{
     flex-direction: column;
   }
 
-  .hero-section .profile img{
-    width: 300px;
+  form {
+    margin: 80px;
   }
 }
 
 @media (max-width: 600px){
-  /* Navbar */
-  nav{
-    padding: 0 20px;
+  /* Header */
+  .menu-icon{
+    display: block;
   }
-  /* MAKE IT RESPONSIVE */  
 
-  /* Hero-Section */
+  .nav-links{
+    position: absolute;
+    top: 100%;
+    margin-top: 16px;
+    width: 100%;
+    padding: 16px;
+    color: white;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 3rem;
+  }
+
+  .nav-links li{
+    margin-top: 1.5rem;
+    padding: 48px;
+  }
+
+  .contact-link{              
+    display: block;
+  }
+
+  #menu-toggle:checked ~ .nav-links{
+    display: flex;
+  }
+  
+  #menu-toggle:checked ~ .visit-btn{
+    display: flex;
+  }
+
+  header{
+    padding: 16px 80px;
+    gap: 8rem;
+  }
+
+  header .logo{
+    font-size: 1.5rem;
+  }
+
+  /* Section 1: Hero */
   .hero-section{
     padding: 0 20px;
   }
 
   .hero-section .text h2{
     font-size: 30px;
+  }
+
+  /* Section 2: Skills */
+  .interests-section{
+    padding: 0 20px;
+  }
+
+  .interests-section .cells .cell span{
+    font-size: 16px;
+  }
+
+  /* Section 5: Contact */
+  .contact-section{
+    padding: 0 20px;
+  }
+
+  .contact-section p{
+    margin-left: 20px;
+  }
+
+  .contact-buttons{
+    padding: 0.8rem;
+  }
+
+  .contact-btn{
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .contact-btn i{
+    font-size: 1rem;
+  }
+
+  form {
+    margin: 80px;
+  }
+
+  /* Footer */
+  footer .row{
+    flex-direction: column;
+    padding: 20px 30px;
+    justify-content: center;
+    align-items: center;
   }
 }
